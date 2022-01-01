@@ -1,0 +1,11 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  background: bisque;
+
+  &__logo{
+flex: 1;
+  }
+}
