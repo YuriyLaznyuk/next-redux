@@ -12,6 +12,7 @@ const Navbar = () => {
 		{ id: 3, title: 'Contacts', path: '/contacts' },
 		{ id: 4, title: 'Counter', path: '/counter' },
 		{ id: 5, title: 'Kanye', path: '/kanye' },
+		{ id: 6, title: 'Users', path: '/users' },
 	];
 	const getLink = (link: navigationType[]): ReactNode[] => {
 		return link.map(i => (
