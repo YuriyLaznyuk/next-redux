@@ -13,11 +13,13 @@ const Counter = () => {
 	const { value } = useAppSelector(state => state.counter);
 	const [amount, setAmount] = useState<number>(0);
 	const [flag, setFlag] = useState<IStatus>({ flag: false, effect: false });
-
+console.log('port ',process.env.PORT)
 	useEffect(() => {
 		const myFetch = async () => {
 			if (typeof window !== 'undefined') {
 				const host: string = window?.location.origin;
+				console.log('host',host);
+				let url=(host===`http://localhost:7159`) ? host : 'https://next-redux-seven.vercel.app/api/user'
 				const response = await fetch(`${host}/api/user`, {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json; charset=utf-8' },
