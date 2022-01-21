@@ -22,6 +22,7 @@ console.log('port ',process.env.PORT)
 				let url=(host===`http://localhost:7159/api/user`) ? host : 'https://yuriy2021.herokuapp.com/file/eng'
 				let method=(host===`http://localhost:7159`) ? 'POST' : 'GET'
 				const response = await fetch(`${url}`, {
+					mode:'cors',
 					method: `${method}`,
 					headers: { 'Content-Type': 'application/json; charset=utf-8',
 						'Access-Control-Allow-Origin':'*'},
