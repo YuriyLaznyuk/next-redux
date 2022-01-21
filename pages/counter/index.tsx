@@ -7,7 +7,7 @@ const Counter = () => {
 	const { value } = useAppSelector(state => state.counter);
 	const [amount, setAmount] = useState<number>(0);
 	// const [user, setUser] = useState<string>('');
-	const host: string = window.location.origin;
+	const host: string = window?.location.origin;
 
 	const myFetch = async () => {
 		const response = await fetch(`${host}/api/user`, {
