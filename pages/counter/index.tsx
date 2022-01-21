@@ -23,7 +23,8 @@ console.log('port ',process.env.PORT)
 				let method=(host===`http://localhost:7159`) ? 'POST' : 'GET'
 				const response = await fetch(`${url}`, {
 					method: `${method}`,
-					headers: { 'Content-Type': 'application/json; charset=utf-8' },
+					headers: { 'Content-Type': 'application/json; charset=utf-8',
+						'Access-Control-Allow-Origin':'*'},
 				});
 				const blob = await response.blob();
 				const file = await window.URL.createObjectURL(blob);
