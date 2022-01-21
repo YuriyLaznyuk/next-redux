@@ -27,7 +27,7 @@ const pdfUkr = path.resolve('file', 'YuriyL_12_eng.pdf');
 		server.listen(port, () => {
 			console.log('PORT ', port);
 			console.log(pdfEng);
-			console.log(pdfUkr);
+			// console.log(pdfUkr);
 		});
 	} catch (e) {
 		console.log(e);
