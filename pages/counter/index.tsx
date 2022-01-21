@@ -19,9 +19,9 @@ console.log('port ',process.env.PORT)
 			if (typeof window !== 'undefined') {
 				const host: string = window?.location.origin;
 				console.log('host',host);
-				let url=(host===`http://localhost:7159`) ? host : 'https://yuriy2021.herokuapp.com/file/eng'
+				let url=(host===`http://localhost:7159/api/user`) ? host : 'https://yuriy2021.herokuapp.com/file/eng'
 				let method=(host===`http://localhost:7159`) ? 'POST' : 'GET'
-				const response = await fetch(`${url}/api/user`, {
+				const response = await fetch(`${url}`, {
 					method: `${method}`,
 					headers: { 'Content-Type': 'application/json; charset=utf-8' },
 				});
