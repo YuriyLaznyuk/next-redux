@@ -19,14 +19,16 @@ console.log('port ',process.env.PORT)
 			if (typeof window !== 'undefined') {
 				const host: string = window?.location.origin;
 				console.log('host',host);
-				let url=(host===`http://localhost:7159/api/user`) ? host : 'https://yuriy2021.herokuapp.com/file/eng'
-				let method=(host===`http://localhost:7159`) ? 'POST' : 'GET'
-				const response = await fetch(`${url}`, {
+				// let url=(host===`http://localhost:7159`) ? `http://localhost:7159/api/user` : 'https://yuriy2021.herokuapp.com/file/eng'
+				// let method=(host===`http://localhost:7159`) ? 'POST' : 'GET'
+				const response = await fetch(`${host}/api/user`, {
 					mode:'cors',
-					method: `${method}`,
+					method: `POST`,
 					headers: { 'Content-Type': 'application/json; charset=utf-8',
 						'Access-Control-Allow-Origin':'*'},
 				});
+
+				// const response =await fetch('https://yuriy2021.herokuapp.com/file/eng')
 				const blob = await response.blob();
 				const file = await window.URL.createObjectURL(blob);
 				const link = document.createElement('a');
