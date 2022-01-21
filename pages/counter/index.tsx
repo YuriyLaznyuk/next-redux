@@ -7,23 +7,26 @@ const Counter = () => {
 	const { value } = useAppSelector(state => state.counter);
 	const [amount, setAmount] = useState<number>(0);
 	// const [user, setUser] = useState<string>('');
-	const host: string = window?.location.origin;
 
 	const myFetch = async () => {
-		const response = await fetch(`${host}/api/user`, {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json; charset=utf-8' },
-		});
-		const blob = await response.blob();
-		const file = await window.URL.createObjectURL(blob);
-		const link = document.createElement('a');
-		link.href = file;
-		link.download = 'YuriyL_12.pdf';
-		document.body.appendChild(link);
-		link.click();
-		link.remove();
-		// setUser(json.name);
+		if (typeof window !== 'undefined') {
+			const host: string = window?.location.origin;
+			const response = await fetch(`${host}/api/user`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json; charset=utf-8' },
+			});
+			const blob = await response.blob();
+			const file = await window.URL.createObjectURL(blob);
+			const link = document.createElement('a');
+			link.href = file;
+			link.download = 'YuriyL_12.pdf';
+			document.body.appendChild(link);
+			link.click();
+			link.remove();
+			// setUser(json.name);
+		}
 	};
+
 	return (
 		<div className={styles.counter}>
 			{/*<h1>{user}</h1>*/}
