@@ -19,8 +19,8 @@ console.log('port ',process.env.PORT)
 			if (typeof window !== 'undefined') {
 				const host: string = window?.location.origin;
 				console.log('host',host);
-				let url=(host===`http://localhost:7159`) ? host : 'https://next-redux-seven.vercel.app/api/user'
-				const response = await fetch(`${host}/api/user`, {
+				let url=(host===`http://localhost:7159`) ? host : 'https://next-redux-seven.vercel.app'
+				const response = await fetch(`${url}/api/user`, {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json; charset=utf-8' },
 				});
