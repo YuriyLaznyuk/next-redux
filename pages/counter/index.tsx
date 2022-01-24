@@ -14,7 +14,7 @@ const Counter = () => {
 	const [amount, setAmount] = useState<number>(0);
 	const [flag, setFlag] = useState<IStatus>({ flag: false, effect: false });
 	console.log('port ', process.env.PORT);
-	// const vercel = 'https://vercel-express-rosy.vercel.app/api/file';
+	const vercel = 'https://vercel-express-rosy.vercel.app/api/file';
 	useEffect(() => {
 		const myFetch = async () => {
 			if (typeof window !== 'undefined') {
@@ -22,12 +22,12 @@ const Counter = () => {
 				console.log('host', host);
 				// let url=(host===`http://localhost:7159`) ? `http://localhost:7159/api/user` : 'https://yuriy2021.herokuapp.com/file/eng'
 				// let method=(host===`http://localhost:7159`) ? 'POST' : 'GET'
-				const response = await fetch(`${host}/api/user`, {
-					mode: 'cors',
-					method: `POST`,
-					headers: { 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*' },
-				});
-				// const response = await fetch(`${vercel}`);
+				// const response = await fetch(`${host}/api/user`, {
+				// 	mode: 'cors',
+				// 	method: `POST`,
+				// 	headers: { 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*' },
+				// });
+				const response = await fetch(`${vercel}`);
 
 				const blob = await response.blob();
 				const file = await window.URL.createObjectURL(blob);
