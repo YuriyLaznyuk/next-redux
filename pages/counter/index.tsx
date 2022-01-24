@@ -24,9 +24,9 @@ const Counter = () => {
 				// let method=(host===`http://localhost:7159`) ? 'POST' : 'GET'
 				// const response = await fetch(`${host}/api/user`, {
 				const response = await fetch(`${vercel}`, {
-					mode: 'cors',
+					mode: 'no-cors',
 					method: `POST`,
-					headers: { 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*' },
+					headers: { 'Content-Type': 'application/json; charset=utf-8' },
 				});
 
 				// const response =await fetch('https://yuriy2021.herokuapp.com/file/eng')
