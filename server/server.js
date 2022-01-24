@@ -23,6 +23,9 @@ const pdfUkr = path.resolve('file', 'YuriyL_12_eng.pdf');
 				return res.download(pdfUkr, 'YuriyL_12.pdf');
 			} else return res.status(500).json({ error: 'DownloadError' });
 		});
+		server.post('/api/test',(req,res)=>{
+			res.json({message:'Hello'})
+		})
 
 		server.listen(port, () => {
 			console.log('PORT ', port);
